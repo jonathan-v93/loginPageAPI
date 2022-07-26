@@ -39,6 +39,6 @@ npm t
 
 **setup database .env**
 You will need create a .env.development and .env.test file with a link to each appropriate database. This should look like:
-PGDATABASE=nc_news
-PGDATABASE=nc_news_test
+PGDATABASE=loginapp         <- for development 
+PGDATABASE=loginapp_test    <- for test
 
