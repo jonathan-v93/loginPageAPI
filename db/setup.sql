@@ -1,0 +1,7 @@
+-- Active: 1637334759722@@127.0.0.1@3306
+DROP DATABASE IF EXISTS loginapp;
+
+DROP DATABASE IF EXISTS loginapp_test;
+
+CREATE DATABASE loginapp;
+CREATE DATABASE loginapp_test;

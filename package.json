@@ -1,0 +1,46 @@
+{
+    "name": "loginpage",
+    "version": "1.0.0",
+    "description": "tech test",
+    "main": "index.js",
+    "scripts": {
+        "start": "node listen.js",
+        "setup-dbs": "psql -f ./db/setup.sql",
+        "seed": "node ./db/seeds/run-seed.js",
+        "test": "jest __tests__/app.test.js",
+        "prepare": "husky install"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jonathan-v93/loginPageAPI"
+    },
+    "keywords": [],
+    "author": "Jonathan Vaughan",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/jonathan-v93/loginPageAPI/issues"
+    },
+    "homepage": "https://github.com/jonathan-v93/loginPageAPI#readme",
+    "devDependencies": {
+        "husky": "^8.0.1",
+        "jest": "^27.5.1",
+        "jest-extended": "^2.0.0",
+        "jest-sorted": "^1.0.14",
+        "pg-format": "^1.0.4"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.1",
+        "express": "^4.18.1",
+        "mongodb": "^4.8.0",
+        "pg": "^8.7.3",
+        "psql": "^0.0.1",
+        "spql": "^1.5.0",
+        "supertest": "^6.2.4"
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "jest-extended/all",
+            "jest-sorted"
+        ]
+    }
+}
