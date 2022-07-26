@@ -23,7 +23,11 @@
     },
     "homepage": "https://github.com/jonathan-v93/loginPageAPI#readme",
     "devDependencies": {
-        "jest": "^27.5.1"
+        "husky": "^8.0.1",
+        "jest": "^27.5.1",
+        "jest-extended": "^2.0.0",
+        "jest-sorted": "^1.0.14",
+        "pg-format": "^1.0.4"
     },
     "dependencies": {
         "dotenv": "^16.0.1",
