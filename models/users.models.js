@@ -20,3 +20,16 @@ exports.fetchUserWithUsername = (username) => {
         return rows[0]
     })
 }
+
+exports.loginUser = (body, username) => {
+    const { password } = body;
+    const keys = Object.keys(body);
+    if(keys.length !== 1) return Promise.reject('Bad Request')
+    if (!password || typeof password !== 'string') {
+        return Promise.reject('Bad Request')
+    }
+    return db.query('SELECT * FROM login_details WHERE username = $1 AND password = $2;', [username, password]).then(({ rows }) => {
+        if (!rows[0]) return Promise.reject('Not Found')
+        return rows[0]
+    })
+}

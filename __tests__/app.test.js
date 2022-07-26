@@ -25,11 +25,46 @@ describe('/api/users/:username', () => {
         });
 
     });
-})
+    describe('POST', () => {
+        test('Status: 201, responds with new article object', () => {
+            const toSend = {
+                password: 'jamie123',
+            }
+            return request(app).post('/api/users/two').send(toSend).expect(200).then(({ body }) => {
+                expect(body).toEqual(expect.objectContaining({
+                    password: 'jamie123',
+                }))
+            })
+        })
+        test('Status: 400 missing properties form the request body', () => {
+            const toSend = {}
+            return request(app).post('/api/users/one').send(toSend).expect(400).then(({ body }) => {
+                expect(body.msg).toBe('Bad Request')
+            })
+        });
+        test('Status: 400 wrong data type in the request body', () => {
+            const toSend = { password: 999 }
+            return request(app).post('/api/users/three').send(toSend).expect(400).then(({ body }) => {
+                expect(body.msg).toBe('Bad Request')
+            })
+
+        });
+        test('Status: 400, given extra properties in the request body that are unnececerry', () => {
+            const toSend = {
+                banana: "what you doing here?",
+                password: "jamie123"
+            }
+            return request(app).post('/api/users/two').send(toSend).expect(400).then(({ body }) => {
+                expect(body.msg).toBe('Bad Request')
+            })
+        });
+    });
+});
+
 
 describe('/api/users', () => {
     describe('POST', () => {
-        test('Status: 201, responds with the newly posted comment', () => {
+        test('Status: 201, responds with the newly posted user', () => {
             const newUser = {
                 username: 'test',
                 email: 'test@hotmail.com',
