@@ -2,6 +2,8 @@
 
 You will need to clone this directory running `git clone https://github.com/jonathan-v93/loginPageAPI` from your terminal in your desired location.
 
+A live version is available to view here via Heroku https://git.heroku.com/login-app-api-test.git
+
 **You will need to install these dependancies and dev dependacies**
 
 ```
