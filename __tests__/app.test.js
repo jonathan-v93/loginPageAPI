@@ -18,9 +18,9 @@ describe('/api/users/:username', () => {
             })
 
         });
-        test('Status 404, username is correct format but not in the table', () => {
-            return request(app).get('/api/notHere').expect(404).then(({ body }) => {
-                expect(body.msg).toBe('Path Not Found')
+        test.only('Status 404, username is correct format but not in the table', () => {
+            return request(app).get('/api/users/notHere').expect(404).then(({ body }) => {
+                expect(body.msg).toBe('Not Found')
             })
         });
 

@@ -16,7 +16,7 @@ exports.createUser = (body) => {
 
 exports.fetchUserWithUsername = (username) => {
     return db.query('SELECT username FROM login_details WHERE username = $1;', [username]).then(({ rows }) => {
-        if (!rows[0]) return Promise.reject('Not found')
+        if (!rows[0]) return Promise.reject('Not Found')
         return rows[0]
     })
 }
