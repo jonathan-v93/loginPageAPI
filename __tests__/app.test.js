@@ -26,7 +26,7 @@ describe('/api/users/:username', () => {
 
     });
     describe('POST', () => {
-        test('Status: 201, responds with new article object', () => {
+        test('Status: 201, responds with new user object', () => {
             const toSend = {
                 password: 'jamie123',
             }
